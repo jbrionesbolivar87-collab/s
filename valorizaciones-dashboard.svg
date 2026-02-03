@@ -1,0 +1,461 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="920" viewBox="0 0 1600 920">
+  <defs>
+    <!-- ===================== QUIET LUXURY BACKGROUND ===================== -->
+    <linearGradient id="bgLux" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#05060B"/>
+      <stop offset="0.55" stop-color="#070A13"/>
+      <stop offset="1" stop-color="#03040A"/>
+    </linearGradient>
+
+    <radialGradient id="haloLux" cx="55%" cy="22%" r="78%">
+      <stop offset="0" stop-color="#A9ECFF" stop-opacity="0.09"/>
+      <stop offset="0.35" stop-color="#E9D8B4" stop-opacity="0.05"/>
+      <stop offset="0.7" stop-color="#A9ECFF" stop-opacity="0.03"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="vignLux" cx="50%" cy="45%" r="88%">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.04"/>
+      <stop offset="0.62" stop-color="#000000" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.62"/>
+    </radialGradient>
+
+    <pattern id="grainLux" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="0.7" fill="#EAF2FF" opacity="0.016"/>
+      <circle cx="11" cy="6" r="0.6" fill="#EAF2FF" opacity="0.012"/>
+      <circle cx="7" cy="12" r="0.6" fill="#EAF2FF" opacity="0.012"/>
+    </pattern>
+
+    <pattern id="hairGrid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" fill="none" stroke="#EAF2FF" stroke-opacity="0.028" stroke-width="1"/>
+      <path d="M0 32H64 M32 0V64" fill="none" stroke="#EAF2FF" stroke-opacity="0.018" stroke-width="1"/>
+    </pattern>
+
+    <!-- ===================== PREMIUM ACCENTS ===================== -->
+    <linearGradient id="accentLux" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#E9D8B4"/>
+      <stop offset="0.5" stop-color="#A9ECFF"/>
+      <stop offset="1" stop-color="#C9B48A"/>
+    </linearGradient>
+
+    <linearGradient id="accentLux2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A9ECFF" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#E9D8B4" stop-opacity="0.92"/>
+    </linearGradient>
+
+    <linearGradient id="sheenLux" x1="-1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+      <animate attributeName="x1" dur="8.8s" values="-1;1" repeatCount="indefinite"/>
+      <animate attributeName="x2" dur="8.8s" values="0;2" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <!-- ===================== SURFACES ===================== -->
+    <linearGradient id="panelLux" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0F1426" stop-opacity="0.74"/>
+      <stop offset="1" stop-color="#070911" stop-opacity="0.74"/>
+    </linearGradient>
+
+    <linearGradient id="panelLux2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#142042" stop-opacity="0.78"/>
+      <stop offset="1" stop-color="#070911" stop-opacity="0.78"/>
+    </linearGradient>
+
+    <linearGradient id="fieldLux" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000000" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.28"/>
+    </linearGradient>
+
+    <!-- ===================== FILTERS ===================== -->
+    <filter id="shadowLux" x="-35%" y="-35%" width="170%" height="170%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity="0.64"/>
+    </filter>
+
+    <filter id="glowLux" x="-45%" y="-45%" width="190%" height="190%">
+      <feGaussianBlur stdDeviation="3.2" result="b"/>
+      <feColorMatrix in="b" type="matrix"
+        values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 0.38 0" result="g"/>
+      <feMerge>
+        <feMergeNode in="g"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- ===================== STYLES ===================== -->
+    <style>
+      .ui { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
+      .H1 { fill:#F7F9FF; font-size:22px; font-weight:900; letter-spacing:0.18px; }
+      .H2 { fill:#F7F9FF; font-size:16px; font-weight:850; }
+      .H3 { fill:#F7F9FF; font-size:14px; font-weight:850; }
+      .S  { fill:#A9BCD9; font-size:12px; }
+      .L  { fill:#C8D6F0; font-size:11px; }
+      .M  { fill:#8EA6C9; font-size:11px; }
+      .V  { fill:#F7F9FF; font-size:12px; font-weight:800; }
+
+      .panel { fill:url(#panelLux); stroke: rgba(200,214,240,0.12); stroke-width:1; }
+      .panel2 { fill:url(#panelLux2); stroke: rgba(200,214,240,0.12); stroke-width:1; }
+      .divider { stroke: rgba(200,214,240,0.10); stroke-width:1; }
+
+      .field { fill:url(#fieldLux); stroke: rgba(200,214,240,0.14); stroke-width:1; }
+
+      .pill { fill: rgba(247,249,255,0.028); stroke: rgba(200,214,240,0.12); stroke-width:1; }
+      .pillOn { fill: rgba(169,236,255,0.055); stroke: url(#accentLux); stroke-width:2; filter:url(#glowLux); }
+
+      .card { fill: rgba(247,249,255,0.026); stroke: rgba(200,214,240,0.12); stroke-width:1; }
+      .cardOn { fill: rgba(169,236,255,0.045); stroke: url(#accentLux); stroke-width:2; filter:url(#glowLux); }
+
+      .btn { fill: rgba(247,249,255,0.034); stroke: rgba(200,214,240,0.14); stroke-width:1; }
+      .btnP { fill: rgba(169,236,255,0.08); stroke: url(#accentLux); stroke-width:2; filter:url(#glowLux); }
+
+      .tagGold { fill: rgba(233,216,180,0.10); stroke: rgba(233,216,180,0.30); stroke-width:1; }
+      .tagIce  { fill: rgba(169,236,255,0.10); stroke: rgba(169,236,255,0.30); stroke-width:1; }
+      .tagOk   { fill: rgba(0,255,156,0.10); stroke: rgba(0,255,156,0.28); stroke-width:1; }
+      .tagWarn { fill: rgba(233,216,180,0.10); stroke: rgba(233,216,180,0.30); stroke-width:1; }
+      .tagTxt { fill:#F7F2E7; font-size:11px; font-weight:900; letter-spacing:0.2px; }
+
+      .ico { fill:none; stroke: rgba(247,249,255,0.70); stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+      .icoM { stroke: rgba(169,188,217,0.45); }
+
+      .r28 { rx:28; ry:28; }
+      .r26 { rx:26; ry:26; }
+      .r24 { rx:24; ry:24; }
+      .r20 { rx:20; ry:20; }
+      .r16 { rx:16; ry:16; }
+      .r14 { rx:14; ry:14; }
+
+      .click { cursor:pointer; }
+      .click:hover { opacity:0.965; }
+    </style>
+  </defs>
+
+  <!-- ===================== BACKGROUND ===================== -->
+  <rect width="1600" height="920" fill="url(#bgLux)"/>
+  <rect width="1600" height="920" fill="url(#haloLux)"/>
+  <rect width="1600" height="920" fill="url(#hairGrid)"/>
+  <rect width="1600" height="920" fill="url(#grainLux)"/>
+  <rect width="1600" height="920" fill="url(#vignLux)"/>
+
+  <!-- ===================== HEADER ===================== -->
+  <g class="ui">
+    <rect x="28" y="22" width="1544" height="98" class="panel r28" filter="url(#shadowLux)"/>
+    <rect x="28" y="22" width="1544" height="98" rx="28" ry="28" fill="url(#sheenLux)" opacity="0.55"/>
+
+    <g transform="translate(60,49)">
+      <rect x="0" y="0" width="46" height="46" rx="16" fill="rgba(233,216,180,0.10)" stroke="url(#accentLux)" stroke-width="2" filter="url(#glowLux)"/>
+      <path d="M14 30 L23 14 L32 30" class="ico"/>
+      <path d="M14 30 H32" class="ico icoM"/>
+    </g>
+
+    <text x="126" y="60" class="H1">Valorizaciones • Consola Ejecutiva</text>
+    <text x="126" y="86" class="S">Evidencias • Checklist • Resumen • Progreso (barras) • Acciones rápidas • Etapas • Notas</text>
+
+    <!-- quick search -->
+    <g transform="translate(680,44)" class="click">
+      <rect x="0" y="0" width="320" height="54" rx="20" class="field"/>
+      <path d="M22 34 a10 10 0 1 1 0-0.01" class="ico icoM"/>
+      <path d="M32 34 l10 10" class="ico icoM"/>
+      <text x="56" y="34" class="M">Buscar (periodo, doc, partida…)</text>
+    </g>
+
+    <!-- meta -->
+    <g transform="translate(1016,38)">
+      <rect x="0" y="0" width="540" height="66" rx="22" class="field"/>
+      <text x="18" y="26" class="L">Proyecto</text>
+      <text x="18" y="50" class="V">{{proyecto_nombre}}</text>
+
+      <text x="268" y="26" class="L">Periodo</text>
+      <text x="268" y="50" class="V">{{periodo}}</text>
+
+      <g transform="translate(438,18)">
+        <rect x="0" y="0" width="86" height="30" rx="15" class="tagIce"/>
+        <text x="16" y="20" class="tagTxt">ACTIVO</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ===================== LEFT: ETAPAS ===================== -->
+  <g class="ui">
+    <rect x="28" y="136" width="456" height="758" class="panel r28" filter="url(#shadowLux)"/>
+    <text x="64" y="176" class="H2">Etapas (1–12)</text>
+    <text x="64" y="198" class="S">Selecciona una etapa para ver detalle, checklist y evidencias.</text>
+    <line x1="52" y1="216" x2="464" y2="216" class="divider"/>
+
+    <g transform="translate(64,240)">
+      <line x1="26" y1="8" x2="26" y2="648" class="divider"/>
+
+      <!-- 1 active -->
+      <g class="click">
+        <circle cx="26" cy="21" r="9" fill="url(#accentLux2)" filter="url(#glowLux)"/>
+        <rect x="58" y="0" width="386" height="44" class="pillOn r16"/>
+        <rect x="74" y="10" width="58" height="24" rx="12" class="tagGold"/>
+        <text x="103" y="27" text-anchor="middle" class="tagTxt">01</text>
+        <text x="142" y="20" class="V">Parametrización del contrato</text>
+        <text x="142" y="36" class="M">Contrato listo para valorizar</text>
+      </g>
+
+      <!-- 2..12 compact -->
+      <g transform="translate(0,52)" class="click">
+        <circle cx="26" cy="21" r="7" fill="rgba(200,214,240,0.22)"/>
+        <rect x="58" y="0" width="386" height="44" class="pill r16"/>
+        <rect x="74" y="10" width="58" height="24" rx="12" class="tagIce"/>
+        <text x="103" y="27" text-anchor="middle" class="tagTxt">02</text>
+        <text x="142" y="20" class="V">Presupuesto base</text>
+        <text x="142" y="36" class="M">Partidas + metrados + PU</text>
+      </g>
+
+      <g transform="translate(0,104)" class="click">
+        <circle cx="26" cy="21" r="7" fill="rgba(200,214,240,0.22)"/>
+        <rect x="58" y="0" width="386" height="44" class="pill r16"/>
+        <rect x="74" y="10" width="58" height="24" rx="12" class="tagIce"/>
+        <text x="103" y="27" text-anchor="middle" class="tagTxt">03</text>
+        <text x="142" y="20" class="V">Cierre de periodo</text>
+        <text x="142" y="36" class="M">Fecha de corte</text>
+      </g>
+
+      <g transform="translate(0,156)" class="click">
+        <circle cx="26" cy="21" r="7" fill="rgba(200,214,240,0.22)"/>
+        <rect x="58" y="0" width="386" height="44" class="pill r16"/>
+        <rect x="74" y="10" width="58" height="24" rx="12" class="tagIce"/>
+        <text x="103" y="27" text-anchor="middle" class="tagTxt">04</text>
+        <text x="142" y="20" class="V">Captura avance</text>
+        <text x="142" y="36" class="M">Metrados ejecutados</text>
+      </g>
+
+      <g transform="translate(0,208)" class="click">
+        <circle cx="26" cy="21" r="7" fill="rgba(200,214,240,0.22)"/>
+        <rect x="58" y="0" width="386" height="44" class="pill r16"/>
+        <rect x="74" y="10" width="58" height="24" rx="12" class="tagIce"/>
+        <text x="103" y="27" text-anchor="middle" class="tagTxt">05</text>
+        <text x="142" y="20" class="V">Validación técnica</text>
+        <text x="142" y="36" class="M">Conforme/Obs.</text>
+      </g>
+
+      <g transform="translate(0,260)" class="click">
+        <circle cx="26" cy="21" r="7" fill="rgba(200,214,240,0.22)"/>
+        <rect x="58" y="0" width="386" height="44" class="pill r16"/>
+        <rect x="74" y="10" width="58" height="24" rx="12" class="tagIce"/>
+        <text x="103" y="27" text-anchor="middle" class="tagTxt">06</text>
+        <text x="142" y="20" class="V">Cálculo valorización</text>
+        <text x="142" y="36" class="M">Preliminar</text>
+      </g>
+
+      <g transform="translate(0,312)" class="click">
+        <circle cx="26" cy="21" r="7" fill="rgba(200,214,240,0.22)"/>
+        <rect x="58" y="0" width="386" height="44" class="pill r16"/>
+        <rect x="74" y="10" width="58" height="24" rx="12" class="tagIce"/>
+        <text x="103" y="27" text-anchor="middle" class="tagTxt">07</text>
+        <text x="142" y="20" class="V">Reglas financieras</text>
+        <text x="142" y="36" class="M">Neto</text>
+      </g>
+
+      <g transform="translate(0,364)" class="click">
+        <circle cx="26" cy="21" r="7" fill="rgba(200,214,240,0.22)"/>
+        <rect x="58" y="0" width="386" height="44" class="pill r16"/>
+        <rect x="74" y="10" width="58" height="24" rx="12" class="tagIce"/>
+        <text x="103" y="27" text-anchor="middle" class="tagTxt">08</text>
+        <text x="142" y="20" class="V">Cambios</text>
+        <text x="142" y="36" class="M">Adic./Ded.</text>
+      </g>
+
+      <g transform="translate(0,416)" class="click">
+        <circle cx="26" cy="21" r="7" fill="rgba(200,214,240,0.22)"/>
+        <rect x="58" y="0" width="386" height="44" class="pill r16"/>
+        <rect x="74" y="10" width="58" height="24" rx="12" class="tagIce"/>
+        <text x="103" y="27" text-anchor="middle" class="tagTxt">09</text>
+        <text x="142" y="20" class="V">Aprobación</text>
+        <text x="142" y="36" class="M">Workflow</text>
+      </g>
+
+      <g transform="translate(0,468)" class="click">
+        <circle cx="26" cy="21" r="7" fill="rgba(200,214,240,0.22)"/>
+        <rect x="58" y="0" width="386" height="44" class="pill r16"/>
+        <rect x="74" y="10" width="58" height="24" rx="12" class="tagIce"/>
+        <text x="103" y="27" text-anchor="middle" class="tagTxt">10</text>
+        <text x="142" y="20" class="V">Documentos</text>
+        <text x="142" y="36" class="M">PDF/Excel</text>
+      </g>
+
+      <g transform="translate(0,520)" class="click">
+        <circle cx="26" cy="21" r="7" fill="rgba(200,214,240,0.22)"/>
+        <rect x="58" y="0" width="386" height="44" class="pill r16"/>
+        <rect x="74" y="10" width="58" height="24" rx="12" class="tagIce"/>
+        <text x="103" y="27" text-anchor="middle" class="tagTxt">11</text>
+        <text x="142" y="20" class="V">Pago</text>
+        <text x="142" y="36" class="M">Conciliación</text>
+      </g>
+
+      <g transform="translate(0,572)" class="click">
+        <circle cx="26" cy="21" r="7" fill="rgba(200,214,240,0.22)"/>
+        <rect x="58" y="0" width="386" height="44" class="pill r16"/>
+        <rect x="74" y="10" width="58" height="24" rx="12" class="tagIce"/>
+        <text x="103" y="27" text-anchor="middle" class="tagTxt">12</text>
+        <text x="142" y="20" class="V">Archivo</text>
+        <text x="142" y="36" class="M">Auditoría</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ===================== RIGHT: SECTIONS (Resumen, Progreso barras, Evidencias, Checklist, Acciones, Notas) ===================== -->
+  <g class="ui">
+    <rect x="504" y="136" width="1068" height="758" class="panel2 r28" filter="url(#shadowLux)"/>
+
+    <!-- ========= RESUMEN ========= -->
+    <g transform="translate(536,166)">
+      <text x="0" y="0" class="H2">Resumen</text>
+      <text x="0" y="22" class="S">Vista rápida de la realización del periodo</text>
+
+      <g transform="translate(0,40)">
+        <rect x="0" y="0" width="252" height="92" class="card r20"/>
+        <text x="18" y="28" class="L">Avance físico</text>
+        <text x="18" y="58" class="H2" style="font-size:20px;">{{avance_fisico}}%</text>
+        <text x="18" y="78" class="M">Corte: {{fecha_corte}}</text>
+
+        <g transform="translate(264,0)">
+          <rect x="0" y="0" width="252" height="92" class="card r20"/>
+          <text x="18" y="28" class="L">Bruto</text>
+          <text x="18" y="58" class="H2" style="font-size:20px;">S/ {{bruto_periodo}}</text>
+          <text x="18" y="78" class="M">Acum.: S/ {{acum}}</text>
+        </g>
+
+        <g transform="translate(528,0)">
+          <rect x="0" y="0" width="252" height="92" class="card r20"/>
+          <text x="18" y="28" class="L">Neto a pagar</text>
+          <text x="18" y="58" class="H2" style="font-size:20px;">S/ {{neto}}</text>
+          <text x="18" y="78" class="M">Ret.: S/ {{retencion}}</text>
+        </g>
+
+        <g transform="translate(792,0)">
+          <rect x="0" y="0" width="240" height="92" class="card r20"/>
+          <text x="18" y="28" class="L">Workflow</text>
+          <text x="18" y="58" class="H2" style="font-size:20px;">{{estado_workflow}}</text>
+          <text x="18" y="78" class="M">SLA: {{sla_dias}} días</text>
+        </g>
+      </g>
+
+      <line x1="0" y1="154" x2="1032" y2="154" class="divider"/>
+    </g>
+
+    <!-- ========= PROGRESO (BARRAS) ========= -->
+    <g transform="translate(536,340)">
+      <rect x="0" y="0" width="1032" height="118" class="panel r26"/>
+      <text x="26" y="44" class="H2">Progreso (barras)</text>
+      <text x="26" y="66" class="S">Cumplimiento del flujo, evidencias y checklist</text>
+
+      <!-- 1) Flujo -->
+      <g transform="translate(26,78)">
+        <text x="0" y="0" class="L">Flujo 1–12</text>
+        <rect x="120" y="-12" width="820" height="10" rx="6" fill="rgba(200,214,240,0.12)"/>
+        <rect x="120" y="-12" width="410" height="10" rx="6" fill="url(#accentLux)" opacity="0.88" filter="url(#glowLux)"/>
+        <text x="960" y="-6" class="M">{{pct_flujo}}%</text>
+      </g>
+
+      <!-- 2) Evidencias -->
+      <g transform="translate(26,102)">
+        <text x="0" y="0" class="L">Evidencias</text>
+        <rect x="120" y="-12" width="820" height="10" rx="6" fill="rgba(200,214,240,0.12)"/>
+        <rect x="120" y="-12" width="560" height="10" rx="6" fill="url(#accentLux)" opacity="0.76" filter="url(#glowLux)"/>
+        <text x="960" y="-6" class="M">{{pct_evidencias}}%</text>
+      </g>
+    </g>
+
+    <!-- ========= ETAPA SELECCIONADA + CHECKLIST ========= -->
+    <g transform="translate(536,476)">
+      <!-- Stage detail -->
+      <rect x="0" y="0" width="690" height="248" class="cardOn r26"/>
+      <g transform="translate(28,30)">
+        <rect x="0" y="0" width="86" height="30" rx="15" class="tagGold"/>
+        <text x="18" y="20" class="tagTxt">ETAPA</text>
+        <text x="64" y="20" text-anchor="middle" class="tagTxt">01</text>
+
+        <text x="120" y="22" class="H2" style="font-size:18px;">Parametrización del contrato</text>
+        <text x="120" y="44" class="S">Reglas base (PU/Suma Alzada), impuestos, retenciones, adelantos, roles.</text>
+
+        <g transform="translate(0,72)">
+          <text x="0" y="0" class="L">Salida</text>
+          <rect x="0" y="12" width="634" height="52" class="field r16"/>
+          <text x="14" y="44" class="V">Contrato listo para valorizar</text>
+        </g>
+
+        <g transform="translate(0,144)">
+          <text x="0" y="0" class="L">Responsable</text>
+          <rect x="0" y="12" width="634" height="52" class="field r16"/>
+          <text x="14" y="44" class="V">Admin / Residente / Oficina de contratos</text>
+        </g>
+      </g>
+
+      <!-- Checklist -->
+      <g transform="translate(716,0)">
+        <rect x="0" y="0" width="316" height="248" class="panel r26"/>
+        <text x="24" y="44" class="H2">Checklist</text>
+        <text x="24" y="66" class="S">Requisitos mínimos</text>
+
+        <g transform="translate(24,92)">
+          <rect x="0" y="0" width="268" height="42" rx="16" class="field"/>
+          <path d="M16 26 l6 6 14-18" class="ico"/>
+          <text x="46" y="28" class="V">Tipo + IGV</text>
+
+          <g transform="translate(0,52)">
+            <rect x="0" y="0" width="268" height="42" rx="16" class="field"/>
+            <path d="M16 26 l6 6 14-18" class="ico"/>
+            <text x="46" y="28" class="V">Retención/adel.</text>
+          </g>
+
+          <g transform="translate(0,104)">
+            <rect x="0" y="0" width="268" height="42" rx="16" class="field"/>
+            <path d="M16 26 l6 6 14-18" class="ico icoM"/>
+            <text x="46" y="28" class="V" opacity="0.85">Reajuste (si)</text>
+          </g>
+        </g>
+      </g>
+    </g>
+
+    <!-- ========= EVIDENCIAS + NOTAS + ACCIONES RAPIDAS ========= -->
+    <g transform="translate(536,740)">
+      <!-- Evidencias -->
+      <rect x="0" y="0" width="520" height="154" class="panel r28"/>
+      <text x="26" y="44" class="H2">Evidencias</text>
+      <text x="26" y="66" class="S">Adjuntos y trazabilidad</text>
+
+      <g transform="translate(26,88)">
+        <rect x="0" y="0" width="468" height="44" rx="16" class="field"/>
+        <text x="16" y="28" class="V">Contrato / OS</text>
+        <rect x="392" y="10" width="62" height="24" rx="12" class="tagOk"/>
+        <text x="423" y="27" text-anchor="middle" class="tagTxt">OK</text>
+      </g>
+
+      <!-- Notas -->
+      <g transform="translate(544,0)">
+        <rect x="0" y="0" width="274" height="154" class="panel r28"/>
+        <text x="22" y="44" class="H2">Notas</text>
+        <text x="22" y="66" class="S">Observaciones</text>
+        <rect x="22" y="82" width="230" height="54" class="field r16"/>
+        <text x="34" y="106" class="M">• {{nota_1}}</text>
+        <text x="34" y="126" class="M">• {{nota_2}}</text>
+      </g>
+
+      <!-- Acciones rápidas -->
+      <g transform="translate(834,0)">
+        <rect x="0" y="0" width="198" height="154" class="panel r28"/>
+        <text x="22" y="44" class="H2">Acciones</text>
+        <text x="22" y="66" class="S">Rápidas</text>
+
+        <g transform="translate(22,84)" class="click">
+          <rect x="0" y="0" width="154" height="44" class="btnP r16"/>
+          <text x="14" y="28" class="V">Abrir</text>
+          <path d="M118 18 h18 v18 h-18 z" class="ico"/>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- ===================== FOOTER ===================== -->
+  <g class="ui" opacity="0.82">
+    <text x="34" y="914" class="M">SSapp • Elegant Premium UI • Valorizaciones</text>
+    <text x="1566" y="914" text-anchor="end" class="M">{{usuario}} • {{ambiente}} • v{{version}}</text>
+  </g>
+</svg>
